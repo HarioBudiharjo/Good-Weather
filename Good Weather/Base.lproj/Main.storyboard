@@ -55,7 +55,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Good Weather" id="qlt-TY-msK">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="ibP-yz-vSV"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NcT-fh-jsB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NcT-fh-jsB">
+                            <connections>
+                                <segue destination="NhC-Qr-eR7" kind="presentation" id="0hg-zG-Mjq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-C2-P24" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,10 +73,41 @@
                     <view key="view" contentMode="scaleToFill" id="Pmj-6v-GeH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Cu-jP-38f">
+                                <rect key="frame" x="16" y="90" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT0-fj-2h7">
+                                <rect key="frame" x="161" y="128" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveCityButton" destination="sq4-hg-b0A" eventType="touchUpInside" id="NKO-j2-h2z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TT0-fj-2h7" firstAttribute="top" secondItem="9Cu-jP-38f" secondAttribute="bottom" constant="8" symbolic="YES" id="2TM-qv-mqL"/>
+                            <constraint firstItem="9Cu-jP-38f" firstAttribute="trailing" secondItem="Pmj-6v-GeH" secondAttribute="trailingMargin" id="64L-IN-AfF"/>
+                            <constraint firstItem="9Cu-jP-38f" firstAttribute="leading" secondItem="Pmj-6v-GeH" secondAttribute="leadingMargin" id="TUp-R4-nx6"/>
+                            <constraint firstItem="9Cu-jP-38f" firstAttribute="top" secondItem="prC-Xd-9Tn" secondAttribute="top" constant="26" id="g98-El-LEu"/>
+                            <constraint firstItem="TT0-fj-2h7" firstAttribute="leading" secondItem="prC-Xd-9Tn" secondAttribute="leading" constant="161" id="qtp-7N-h2X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="prC-Xd-9Tn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="PT3-oQ-wcp"/>
+                    <navigationItem key="navigationItem" title="Add City" id="PT3-oQ-wcp">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="BMt-YY-1A5">
+                            <connections>
+                                <action selector="close" destination="sq4-hg-b0A" id="3Ew-th-gN3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="9Cu-jP-38f" id="enS-oG-kJc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1T-ME-n8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

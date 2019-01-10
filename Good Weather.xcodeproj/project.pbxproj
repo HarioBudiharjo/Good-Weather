@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		544700F621C389510053F89A /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544700F521C389510053F89A /* WeatherListTableViewController.swift */; };
 		544700F821C389A50053F89A /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544700F721C389A50053F89A /* AddWeatherCityViewController.swift */; };
+		547CBD5A21C75D65009F97FD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CBD5921C75D65009F97FD /* Webservice.swift */; };
 		548ADEE321C34D87008E67D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548ADEE221C34D87008E67D8 /* AppDelegate.swift */; };
 		548ADEE821C34D87008E67D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548ADEE621C34D87008E67D8 /* Main.storyboard */; };
 		548ADEEA21C34D88008E67D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548ADEE921C34D88008E67D8 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		544700F521C389510053F89A /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
 		544700F721C389A50053F89A /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
+		547CBD5921C75D65009F97FD /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		548ADEDF21C34D87008E67D8 /* Good Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		548ADEE221C34D87008E67D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		548ADEE721C34D87008E67D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		547CBD5821C75D1F009F97FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				547CBD5921C75D65009F97FD /* Webservice.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		548ADED621C34D87008E67D8 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		548ADEE121C34D87008E67D8 /* Good Weather */ = {
 			isa = PBXGroup;
 			children = (
+				547CBD5821C75D1F009F97FD /* Services */,
 				54272E0321C3F1C300A6D36B /* Custom Cell */,
 				544700F421C3891F0053F89A /* Controllers */,
 				548ADEE221C34D87008E67D8 /* AppDelegate.swift */,
@@ -160,6 +171,7 @@
 				54FEB08C21C6B8E400442389 /* WeatherCell.swift in Sources */,
 				544700F621C389510053F89A /* WeatherListTableViewController.swift in Sources */,
 				544700F821C389A50053F89A /* AddWeatherCityViewController.swift in Sources */,
+				547CBD5A21C75D65009F97FD /* Webservice.swift in Sources */,
 				548ADEE321C34D87008E67D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,15 +318,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3ZG558H3C;
 				INFOPLIST_FILE = "Good Weather/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "hariobudiharjo.Good-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -324,15 +339,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3ZG558H3C;
 				INFOPLIST_FILE = "Good Weather/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "hariobudiharjo.Good-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
