@@ -13,13 +13,13 @@
         <!--Settings-->
         <scene sceneID="KeQ-Js-klo">
             <objects>
-                <tableViewController id="GHp-8s-wQ7" sceneMemberID="viewController">
+                <tableViewController id="GHp-8s-wQ7" customClass="SettingsTableViewController" customModule="Good_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nh0-Sh-tsz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VCf-F9-2BE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingsCell" id="VCf-F9-2BE">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VCf-F9-2BE" id="xsI-AT-RqU">
@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="GHp-8s-wQ7" id="aqQ-Md-czw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="9oW-7l-s2w"/>
+                    <navigationItem key="navigationItem" title="Settings" id="9oW-7l-s2w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AIM-PN-XgB">
+                            <connections>
+                                <action selector="done" destination="GHp-8s-wQ7" id="fSF-EH-Hkj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW9-4V-aNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,12 +92,12 @@
                     <navigationItem key="navigationItem" title="Good Weather" id="qlt-TY-msK">
                         <barButtonItem key="leftBarButtonItem" title="Settings" image="740-gear-toolbar.png" id="ibP-yz-vSV">
                             <connections>
-                                <segue destination="3qd-GR-OdP" kind="presentation" id="g3F-hH-Tnz"/>
+                                <segue destination="3qd-GR-OdP" kind="presentation" identifier="SettingsTableViewController" id="g3F-hH-Tnz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NcT-fh-jsB">
                             <connections>
-                                <segue destination="NhC-Qr-eR7" kind="presentation" id="0hg-zG-Mjq"/>
+                                <segue destination="NhC-Qr-eR7" kind="presentation" identifier="AddWeatherCityViewController" id="0hg-zG-Mjq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

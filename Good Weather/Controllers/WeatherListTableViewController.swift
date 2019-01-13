@@ -35,6 +35,16 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddWeatherCityViewController" {
+            prepareSegueForAddWeatherCityViewController(segue: segue)
+        }else if segue.identifier == "SettingsTableViewController" {
+            prepareSegueForSettingsTableViewController(segue: segue)
+        }
+        
+    }
+    
+    func prepareSegueForAddWeatherCityViewController(segue:UIStoryboardSegue){
         guard let nav = segue.destination as? UINavigationController else{
             fatalError("Navigation Controller not found!")
         }
@@ -46,11 +56,30 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
         addWeatherCityVC.delegate = self
     }
     
+    func prepareSegueForSettingsTableViewController(segue:UIStoryboardSegue){
+        guard let nav = segue.destination as? UINavigationController else{
+            fatalError("Navigation Controller not found!")
+        }
+        
+        guard let settingsTVC = nav.viewControllers.first as? SettingsTableViewController else{
+            fatalError("SettingsTableViewController")
+        }
+        
+        settingsTVC.delegate = self
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         
         let weatherVM = self.weatherListViewModel.modelAt(indexPath.row)
         cell.configure(weatherVM)
         return cell
+    }
+}
+
+extension WeatherListTableViewController: SettingsDelegate{
+    func settingsDone(vm: SettingsViewModel) {
+        self.weatherListViewModel.updateUnit(to: vm.selectedUnit)
+        self.tableView.reloadData()
     }
 }
